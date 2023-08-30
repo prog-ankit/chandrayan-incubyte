@@ -68,7 +68,6 @@ public class chandrayan {
         }
 
         if (c == 'u' || c == 'd') {
-            // this.prevDir = this.direction;
             this.prevDir = c == 'u' ? 'U' : 'D';
         }
     }
@@ -83,15 +82,4 @@ public class chandrayan {
         }
     }
 
-    public static void main(String[] args) {
-        chandrayan sc = new chandrayan(0, 0, 0, 'N');
-
-        char[] commands = { 'f', 'r', 'l', 'b', 'f', 'l' };
-
-        sc.sendCommands(commands);
-        System.out.println(sc.getDirection());
-        System.out.println(sc.getX());
-        System.out.println(sc.getY());
-        System.out.println(sc.getZ());
-    }
 }
