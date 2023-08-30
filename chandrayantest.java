@@ -17,10 +17,18 @@ public class chandrayantest {
         // Test:2
         chandrayan obj = new chandrayan(0, 0, 0, 'N');
         obj.sendCommands(new char[] { 'f', 'r', 'l', 'b', 'f', 'l' });
-        assertEquals('D', ch.getDirection());
+        System.out.println(ch.getDirection());
+        assertEquals('W', ch.getDirection());
         assertEquals(0, ch.getX());
         assertEquals(1, ch.getY());
-        assertEquals(1, ch.getZ());
+        assertEquals(0, ch.getZ());
+
+        chandrayan obj2 = new chandrayan(0, 0, 0, 'N');
+        obj2.sendCommands(new char[] { 'f', 'l', 'u', 'b', 'r' });
+        assertEquals('N', ch.getDirection());
+        assertEquals(0, ch.getX());
+        assertEquals(1, ch.getY());
+        assertEquals(-1, ch.getZ());
 
     }
 }

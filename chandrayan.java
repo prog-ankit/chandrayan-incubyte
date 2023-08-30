@@ -1,11 +1,9 @@
-import java.util.*;
-
 public class chandrayan {
 
     private int x = 0;
     private int y = 0;
     private int z = 0;
-    private char prevDir;
+    private char prevDir = 'i';
     private char direction;
 
     public chandrayan(int x, int y, int z, char direction) {
@@ -16,8 +14,9 @@ public class chandrayan {
     }
 
     public char getDirection() {
-        if (this.prevDir != 'i')
+        if (this.prevDir != 'i') {
             return this.prevDir;
+        }
         return this.direction;
     }
 
@@ -34,18 +33,21 @@ public class chandrayan {
     }
 
     public void move(char c) {
+
+        char direction = this.prevDir == 'U' || this.prevDir == 'D' ? this.prevDir : this.direction;
+
         if ((direction == 'N' || direction == 'S') && c == 'f') {
-            y++;
+            this.y++;
         } else if ((direction == 'N' || direction == 'S') && c == 'b') {
-            y--;
+            this.y--;
         } else if ((direction == 'E' || direction == 'W') && c == 'f') {
-            x++;
+            this.x++;
         } else if ((direction == 'E' || direction == 'W') && c == 'b') {
-            x--;
+            this.x--;
         } else if ((direction == 'U' || direction == 'D') && c == 'f') {
-            z++;
+            this.z++;
         } else if ((direction == 'U' || direction == 'D') && c == 'b') {
-            z--;
+            this.z--;
         }
     }
 
@@ -81,4 +83,15 @@ public class chandrayan {
         }
     }
 
+    public static void main(String[] args) {
+        chandrayan sc = new chandrayan(0, 0, 0, 'N');
+
+        char[] commands = { 'f', 'r', 'l', 'b', 'f', 'l' };
+
+        sc.sendCommands(commands);
+        System.out.println(sc.getDirection());
+        System.out.println(sc.getX());
+        System.out.println(sc.getY());
+        System.out.println(sc.getZ());
+    }
 }
