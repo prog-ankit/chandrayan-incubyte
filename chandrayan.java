@@ -81,22 +81,4 @@ public class chandrayan {
         }
     }
 
-    public static void main(String[] args) {
-        chandrayan sc = new chandrayan(0, 0, 0, 'N');
-        System.out.println(sc.getDirection());
-        System.out.println(sc.getX());
-        System.out.println(sc.getY());
-        System.out.println(sc.getZ());
-        // char[] commands = {'f', 'r', 'u', 'b', 'l','d'};
-
-        // for (char c : commands) {
-        // if(c == 'f' || c=='b'){
-        // sc.move(c);
-        // }
-        // else{
-        // sc.tilt(c);
-        // }
-        // }
-
-    }
 }
